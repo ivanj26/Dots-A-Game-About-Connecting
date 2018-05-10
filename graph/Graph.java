@@ -22,18 +22,18 @@ public class Graph{
   private int nbNodes;
 
   public Graph(int initialNode, String[] colors) throws IllegalArgumentException{
-    if (colors.length == initialNode){
-      listAdjacency = new ArrayList<Set<Node>>(initialNode);
-      nbNodes = initialNode;
+    if (colors.length == initialNode * initialNode){
+      listAdjacency = new ArrayList<Set<Node>>(initialNode * initialNode);
+      nbNodes = initialNode * initialNode;
       this.colors = colors;
-      for (int i = 0; i < initialNode; i++){
+      for (int i = 0; i < nbNodes; i++){
         Set<Node> setNodes = new HashSet<>();
         listAdjacency.add(setNodes);
       }
-      for (int i = 0; i < initialNode; i++){
+      for (int i = 0; i < nbNodes; i++){
           addEdge(new Node(i), new Node(i+1));
-          if (i+4 < nbNodes){
-            addEdge(new Node(i), new Node(i+4));
+          if (i+initialNode < nbNodes){
+            addEdge(new Node(i), new Node(i+initialNode));
           }
       }
     } else {
@@ -55,10 +55,16 @@ public class Graph{
   public int getNbNode(){return nbNodes;}
 
   public boolean isCyclicRec(int i, boolean[] visited, int parent, Stack stack){
+    // System.out.println("Nilai visited[] = ");
+    // for (boolean visit : visited){
+    //   System.out.println(visit);
+    // }
+
     visited[i] = true;
 
     for (Iterator<Node> it = listAdjacency.get(i).iterator(); it.hasNext();){
       Node node = it.next();
+      // System.out.println("V = " + i + ", U = " + node.getId());
       if (!visited[node.getId()] && colors[i].equals(node.getColor())){
         if (isCyclicRec(node.getId(), visited, i,stack)){
           stack.push(node.getId());
@@ -128,9 +134,9 @@ public class Graph{
         default:
           System.out.print(ANSI_BLACK + colors[i].charAt(0) + ANSI_RESET);
       }
-      if ((i + 1) % 4 != 0){
+      if ((i + 1) % Math.sqrt(nbNodes) != 0){
         System.out.print("---");
-      } else if (i + 4 < nbNodes){
+      } else if (i + Math.sqrt(nbNodes) < nbNodes){
         System.out.println();
         for (int j = 0; j < Math.sqrt(nbNodes); j++)
           System.out.print("|   ");
