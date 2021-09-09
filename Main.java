@@ -3,9 +3,9 @@ import graph.*;
 
 public class Main{
   public static void main(String[] args) {
-      String[] colors = {"Green", "Green", "Red", //"Green",
-                        "Green", "Green", "Green", //"Green",
-                        "Red", "Purple", "Green"//, "Green",
+      String[] colors = {"Purple", "Green", "Red", //"Green",
+                        "Green", "Green", "Cyan", //"Green",
+                        "Green", "Green", "Green"//, "Green",
                         // "Green", "Green", "Green", "Green",
                         };
       Graph graph = new Graph(3, colors);
