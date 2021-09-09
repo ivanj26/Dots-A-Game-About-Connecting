@@ -23,7 +23,10 @@ Find a circular cycle with same color in `Dots: A Game About Connecting` using D
 # Screenshots
 
 ![App .gif #1](./screenshots/app-preview.gif)
+
 **Figure 1** - App preview
 
+
 ![App Screenshot #2](./screenshots/Screen%20Shot%202021-09-10%20at%2004.09.42.png)
+
 **Figure 2** - Define the matrix colors
