@@ -7,7 +7,7 @@ Find a circular cycle with same color in `Dots: A Game About Connecting` using D
 # How to use?
 
 1. Clone the repository.
-2. Construct the matrix and its color as you wish.
+2. Construct the matrix and its color as you want to.
 3. Compile main file with the following command.
 
     ```shell
