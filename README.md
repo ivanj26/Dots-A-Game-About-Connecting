@@ -1,6 +1,9 @@
 # Dots-A-Game-About-Connecting
 Find a circular cycle with same color in `Dots: A Game About Connecting` using DFS Algorithm.
 
+# Type of Project
+School Project
+
 # Requirements
 - Java
 
